@@ -22,7 +22,28 @@ The downloaded copies used by the notebook are:
 - `data/StudentsPerformance.csv`
 - `data/SampleSuperstore.csv`
 
-## Setup
+## Run in Google Colab
+
+Open the notebook in Google Colab from the GitHub repository:
+
+1. Visit `https://colab.research.google.com/`.
+2. Select **GitHub** in the notebook picker.
+3. Enter `https://github.com/Surja2003/dwbda__assignment`.
+4. Open `DWBDA_Assignments.ipynb` and run the cells yourself.
+
+In Colab, clone the repository and change into its folder before running the
+assignment cells so the CSV paths resolve:
+
+```python
+!git clone https://github.com/Surja2003/dwbda__assignment.git
+%cd dwbda__assignment
+%pip install -r requirements.txt
+```
+
+The notebook is intentionally committed without saved execution results. Run
+the cells in Colab to generate the results interactively.
+
+## Run locally (optional)
 
 Use Python 3.10 or newer. From the repository root, create and activate a
 virtual environment, then install the dependencies:
@@ -55,35 +76,9 @@ PySpark starts a local Spark process.
 
 ## Test
 
-There is no separate test suite yet. The notebook itself is the executable
-check. A successful run should show approximately 21,292 bakery rows after
-excluding `NONE`, 1,000 student rows, and 9,994 superstore rows. It should also
-print association rules, a grade-count table, and Spark totals grouped by
-category.
+There is no separate test suite. Open the notebook in Colab and run the three
+Python cells to perform the checks. The CSV files are already included in the
+repository, so no Kaggle account or API key is required.
 
-To verify that all required CSVs are present before opening Jupyter:
+To verify that all required CSVs are present locally:
 
-```powershell
-Get-ChildItem .\data\*.csv | Select-Object Name,Length
-```
-
-## Push to GitHub
-
-The target repository is `https://github.com/Surja2003/dwbda__assignment.git`.
-After configuring Git and authenticating to GitHub, run:
-
-```powershell
-git init
-git add .
-git commit -m "Add DWBDA assignments and datasets"
-git branch -M main
-git remote add origin https://github.com/Surja2003/dwbda__assignment.git
-git push -u origin main
-```
-
-If `origin` already exists, update it instead:
-
-```powershell
-git remote set-url origin https://github.com/Surja2003/dwbda__assignment.git
-git push -u origin main
-```
