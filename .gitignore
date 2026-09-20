@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local tooling and secrets
+.env
+.vscode/
+
+# Build and test output
+.pytest_cache/
+htmlcov/
+dist/
+build/
+*.egg-info/
