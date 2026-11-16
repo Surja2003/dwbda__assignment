@@ -7,3 +7,4 @@ env/
 .DS_Store
 spark-warehouse/
 metastore_db/
+DWBDA_Assignments.ipynb
